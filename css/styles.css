@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html {
+	background-color: #111;
+	display: table;
+}
+
+body {
+	display: table-cell;
+	width: 100vw; height: 100vh;
+	text-align: center;
+	vertical-align: middle;
+}
+
+canvas {
+	background-color: #000;
+	border: solid 4px #2F1;
+}
