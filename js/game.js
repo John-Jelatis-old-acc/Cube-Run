@@ -111,7 +111,7 @@
 		},
 
 		'tick': function() {
-			var idx;
+			var idx, m;
 
 			if(this.pausedTicks > 0) {
 				return --this.pausedTicks;
@@ -123,12 +123,14 @@
 			}
 			this.player.p.x += this.player.vx;
 
+			m = +1 - this.player.p.w / 2;
+
 			if(this.player.p.x < -1) {
 				this.player.p.x = -1;
-			} else if(this.player.p.x > +1) {
-				this.player.p.x = +1;
+			} else if(this.player.p.x > m) {
+				this.player.p.x = m;
 			}
-			if(this.player.p.x == -1 || this.player.p.x == +1) {
+			if(this.player.p.x == -1 || this.player.p.x == m) {
 				this.player.vx = 0;
 				this.player.ax = 0;
 			}
@@ -136,8 +138,8 @@
 			for(idx = 0; idx < this.walls.length; ++idx) {
 				this.walls[idx].z -= this.conf.speed;
 				if(Math.abs(this.walls[idx].z - this.player.p.z) < .1 &&
-					this.player.p.x + this.player.p.w > this.walls[idx].x &&
-					this.player.p.x < this.walls[idx].x + 2
+					this.player.p.x > this.walls[idx].x &&
+					this.player.p.x + this.player.p.w < this.walls[idx].x + 2
 				) {
 					this.die();
 				}
