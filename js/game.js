@@ -175,9 +175,9 @@
 
 			idx = this;
 
-			// this.canvas.addEventListener('mousemove', function(evt) {
-			// 	idx.player.p.x = 12 * ((evt.pageX - idx.canvas.getBoundingClientRect().left) / idx.canvas.width - .5);
-			// });
+			this.canvas.addEventListener('mousemove', function(evt) {
+				idx.player.p.x = 12 * ((evt.pageX - idx.canvas.getBoundingClientRect().left) / idx.canvas.width - .5);
+			});
 
 			self.addEventListener('keydown', function(evt) {
 				switch(evt.keyCode) {
@@ -199,8 +199,6 @@
 			this.draw();
 		}
 	};
-
-	// I regret not making a Game instance
 
 	var g = Object.assign({ }, game);
 	self.addEventListener('DOMContentLoaded', g.init.bind(g));
