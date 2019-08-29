@@ -202,7 +202,6 @@
 
 	// I regret not making a Game instance
 
-	// self.addEventListener('resize', game.resize.bind(game));
 	var g = Object.assign({ }, game);
 	self.addEventListener('DOMContentLoaded', g.init.bind(g));
 })(this);
