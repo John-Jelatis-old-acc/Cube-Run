@@ -139,7 +139,7 @@
 				this.walls[idx].z -= this.conf.speed;
 				if(Math.abs(this.walls[idx].z - this.player.p.z) < .1 &&
 					this.player.p.x + this.player.p.w > this.walls[idx].x &&
-					this.player.p.x < this.walls[idx].x + this.walls[idx].w * 2
+					this.player.p.x < this.walls[idx].x + this.walls[idx].w
 				) {
 					this.die();
 				}
